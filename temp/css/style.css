@@ -1,0 +1,27 @@
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: #000;
+        color: white;
+        font-family: sans-serif;
+    }
+
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        text-align: center;
+    }
+    #map {
+        height: 380px;
+        border: green 2px solid;
+        border-radius: 12px;
+    }
