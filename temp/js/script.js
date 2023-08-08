@@ -123,7 +123,7 @@ function showMap(latitude, longitude, accuracy, isInside) {
 
   map.fitBounds(featureGroup.getBounds());
   document.querySelector(".error").innerHTML = "";
-  sendNotification(`You are ${isInside ? " " : " not "} in the location`);
+  sendNotification(`You are ${isInside ? "" : "not"} in the location`);
 }
 const sendNotification = (notificationMessage) => {
   alert(notificationMessage);
