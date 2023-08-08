@@ -94,7 +94,7 @@ const successCallback = (position) => {
       ".coordinates"
     ).innerHTML = `Latitude: ${latitude} <br> Longitude: ${longitude}`;
 
-    showMap(latitude, longitude, accuracy);
+    showMap(latitude, longitude, accuracy, true);
   } else {
     document.querySelector(".message").innerHTML =
       "You are not in the location";
@@ -103,10 +103,10 @@ const successCallback = (position) => {
       ".coordinates"
     ).innerHTML = `Latitude: ${latitude} <br> Longitude: ${longitude}`;
 
-    showMap(latitude, longitude, accuracy);
+    showMap(latitude, longitude, accuracy, false);
   }
 };
-function showMap(latitude, longitude, accuracy) {
+function showMap(latitude, longitude, accuracy, isInside) {
   // remove the map
   if (marker) {
     map.removeLayer(marker);
@@ -123,15 +123,16 @@ function showMap(latitude, longitude, accuracy) {
 
   map.fitBounds(featureGroup.getBounds());
   document.querySelector(".error").innerHTML = "";
-  sendNotification();
+  sendNotification(`You are ${isInside ? " " : " not "} in the location`);
 }
-const sendNotification = () => {
+const sendNotification = (notificationMessage) => {
+  alert(notificationMessage);
   // Send the notification to the user
   // https://developer.mozilla.org/en-US/docs/Web/API/notification
   // Ask for the permission
   // https://developer.mozilla.org/en-US/docs/Web/API/Notification/requestPermission
   // Notification.requestPermission();
-  // new Notification("You are in the location");
+  // new Notification(notificationMessage);
   // https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification
 
   if (!("Notification" in window)) {
@@ -140,7 +141,9 @@ const sendNotification = () => {
   } else if (Notification.permission === "granted") {
     // Check whether notification permissions have already been granted;
     // if so, create a notification
-    const notification = new Notification("Hi there!");
+    const notification = new Notification("GeoAttend", {
+      body: notificationMessage,
+    });
     // …
   } else if (Notification.permission !== "denied") {
     // We need to ask the user for permission
@@ -148,7 +151,9 @@ const sendNotification = () => {
       console.log(permission);
       // If the user accepts, let's create a notification
       if (permission === "granted") {
-        const notification = new Notification("Hi there!");
+        const notification = new Notification("GeoAttend", {
+          body: notificationMessage,
+        });
         // …
       }
     });
