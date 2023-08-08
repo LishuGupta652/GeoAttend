@@ -74,19 +74,6 @@ const destinationCoordinates = {
   lon: 78.8161175,
 };
 
-const sendNotification = () => {
-  // Send the notification to the user
-  // https://developer.mozilla.org/en-US/docs/Web/API/notification
-
-  // Ask for the permission
-  // https://developer.mozilla.org/en-US/docs/Web/API/Notification/requestPermission
-  Notification.requestPermission();
-
-  new Notification("You are in the location");
-
-  // https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification
-};
-
 // if the distance is less than 100m then show the message as you are in the location
 // else show the message as you are not in the location
 let marker, circle, accuracy;
@@ -135,12 +122,42 @@ function showMap(latitude, longitude, accuracy) {
   const featureGroup = L.featureGroup([marker, circle]).addTo(map);
 
   map.fitBounds(featureGroup.getBounds());
-
+  document.querySelector(".error").innerHTML = "";
   sendNotification();
 }
+const sendNotification = () => {
+  // Send the notification to the user
+  // https://developer.mozilla.org/en-US/docs/Web/API/notification
+  // Ask for the permission
+  // https://developer.mozilla.org/en-US/docs/Web/API/Notification/requestPermission
+  // Notification.requestPermission();
+  // new Notification("You are in the location");
+  // https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification
+
+  if (!("Notification" in window)) {
+    // Check if the browser supports notifications
+    alert("This browser does not support desktop notification");
+  } else if (Notification.permission === "granted") {
+    // Check whether notification permissions have already been granted;
+    // if so, create a notification
+    const notification = new Notification("Hi there!");
+    // …
+  } else if (Notification.permission !== "denied") {
+    // We need to ask the user for permission
+    Notification.requestPermission().then((permission) => {
+      // If the user accepts, let's create a notification
+      if (permission === "granted") {
+        const notification = new Notification("Hi there!");
+        // …
+      }
+    });
+  }
+};
 
 const errorCallback = (error) => {
   console.log(error);
+  document.querySelector(".message").innerHTML = "";
+  document.querySelector(".coordinates").innerHTML = "";
   document.querySelector(".error").innerHTML = error.message;
 };
 
