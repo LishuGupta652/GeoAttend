@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="data"></h1>
+    <h1>Last Fetched on</h1>
+    <h1 id="time"></h1>
+    <h1>Your Current location is :</h1>
+    <h1 id="location_text"></h1>
+    <div class="wrapper">
+      Count Till now
+      <h1 id="count"></h1>
+    </div>
+  </body>
+  <script>
+    let id;
+    let target;
+    let options;
+    let count = 0;
+
+    function success(pos) {
+      const crd = pos.coords;
+
+      if (
+        target.latitude === crd.latitude &&
+        target.longitude === crd.longitude
+      ) {
+        console.log("Congratulations, you reached the target");
+        navigator.geolocation.clearWatch(id);
+      } else {
+        console.log("You are at", crd.latitude, crd.longitude);
+
+        document.getElementById("data").innerHTML = JSON.stringify(pos);
+
+        var lat = crd.latitude;
+        var long = crd.longitude;
+
+        document.getElementById("location_text").innerHTML = `Latitude: ${lat}
+        <br>Longitude: ${long}
+        <br>Accuracy: ${crd.accuracy}
+        <br>Altitude: ${crd.altitude}
+        <br>Altitude Accuracy: ${crd.altitudeAccuracy}`;
+
+        // get last fetched time
+        var date = new Date();
+        var time = date.toLocaleTimeString();
+        document.getElementById("time").innerHTML = time;
+
+        count++;
+
+        document.getElementById("count").innerHTML = count;
+      }
+    }
+
+    function error(err) {
+      console.error(`ERROR(${err.code}): ${err.message}`);
+    }
+
+    target = {
+      latitude: 0,
+      longitude: 0,
+    };
+
+    options = {
+      enableHighAccuracy: false,
+      timeout: 5000,
+      maximumAge: 0,
+    };
+
+    id = navigator.geolocation.watchPosition(success, error, options);
+  </script>
+</html>
