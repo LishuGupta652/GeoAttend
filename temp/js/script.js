@@ -80,17 +80,6 @@ const successCallback = (position) => {
       maxZoom: 18,
       attribution: "© GeoAttend",
     }).addTo(map);
-    const marker = L.marker([latitude, longitude]).addTo(map);
-
-    const circle = L.circle(
-      [destinationCoordinates.lat, destinationCoordinates.lon],
-      {
-        color: "green",
-        fillColor: "green",
-        fillOpacity: 0.5,
-        radius: 30,
-      }
-    ).addTo(map);
 
     // Send the notification to the user
     // https://developer.mozilla.org/en-US/docs/Web/API/notification
