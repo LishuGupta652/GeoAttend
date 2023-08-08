@@ -126,7 +126,7 @@ function showMap(latitude, longitude, accuracy, isInside) {
   sendNotification(`You are ${isInside ? "" : "not"} in the location`);
 }
 const sendNotification = (notificationMessage) => {
-  alert(notificationMessage);
+  // alert(notificationMessage);
   // Send the notification to the user
   // https://developer.mozilla.org/en-US/docs/Web/API/notification
   // Ask for the permission
