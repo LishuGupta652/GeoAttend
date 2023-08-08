@@ -31,6 +31,15 @@ const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 L.Control.geocoder().addTo(map);
 
+const destination = [10.7634768, 78.8161175];
+
+const destinationCircle = L.circle(destination, {
+  color: "red",
+  fillColor: "#f03",
+}).addTo(map);
+
+destinationCircle.bindTooltip("Destination ", {});
+
 // target locatoin 10.7634768, 78.8161175
 function distance(lat1, lon1, lat2, lon2) {
   const earthRadius = 6371; // Radius of the earth in km
@@ -121,7 +130,7 @@ function showMap(latitude, longitude, accuracy) {
   }
 
   marker = L.marker([latitude, longitude]);
-  circle = L.circle([latitude, longitude], { radius: accuracy });
+  circle = L.circle([latitude, longitude], { radius: 100 });
 
   const featureGroup = L.featureGroup([marker, circle]).addTo(map);
 
@@ -132,6 +141,7 @@ function showMap(latitude, longitude, accuracy) {
 
 const errorCallback = (error) => {
   console.log(error);
+  document.querySelector(".error").innerHTML = error.message;
 };
 
 const options = {

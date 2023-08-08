@@ -36,7 +36,7 @@ Introducing **GeoAttend**, a cutting-edge Geospatial Attendance System designed 
 
 GeoAttend draws inspiration from successful applications such as railway app UTS, food delivery apps, and ride-sharing platforms like Uber and OLA. By incorporating advanced geofencing technology, GeoAttend revolutionizes traditional attendance management, bringing organizations into the modern age of efficient and accurate event tracking.
 
-For more information and a live demo, visit our [website]() and experience the future of attendance management with GeoAttend.
+For more information and a live demo, visit our [website](https://geoattend.lishugupta.in/) and experience the future of attendance management with GeoAttend.
 
 ## How is GeoAttend Different?
 

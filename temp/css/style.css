@@ -21,11 +21,11 @@
         text-align: center;
     }
     #map {
-        height: 380px;
+        width: 960px;
+        height: 500px;
         border: green 2px solid;
         border-radius: 12px;
     }
     .error {
         color: red;
-        
     }

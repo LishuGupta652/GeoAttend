@@ -34,7 +34,7 @@ https://dzone.com/articles/geofencing-regions-with-javascript-and-here
 
 ## Cordinates
 
-- Emerald (10.7634768, 78.8161175)
+- Emerald ([10.7634768, 78.8161175])
 - Department (10.7599, 78.818)
 
 salary box : https://www.youtube.com/shorts/JcKErZ95HDU
