@@ -25,3 +25,7 @@
         border: green 2px solid;
         border-radius: 12px;
     }
+    .error {
+        color: red;
+        
+    }

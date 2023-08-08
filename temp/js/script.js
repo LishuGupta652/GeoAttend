@@ -22,6 +22,15 @@
 //   .setContent("I am a standalone popup.")
 //   .openOn(map);
 
+const map = L.map("map", {
+  center: [10, 78],
+  zoom: 13,
+});
+const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: "",
+}).addTo(map);
+L.Control.geocoder().addTo(map);
+
 // target locatoin 10.7634768, 78.8161175
 function distance(lat1, lon1, lat2, lon2) {
   const earthRadius = 6371; // Radius of the earth in km
@@ -56,10 +65,24 @@ const destinationCoordinates = {
   lon: 78.8161175,
 };
 
+const sendNotification = () => {
+  // Send the notification to the user
+  // https://developer.mozilla.org/en-US/docs/Web/API/notification
+
+  // Ask for the permission
+  // https://developer.mozilla.org/en-US/docs/Web/API/Notification/requestPermission
+  Notification.requestPermission();
+
+  new Notification("You are in the location");
+
+  // https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification
+};
+
 // if the distance is less than 100m then show the message as you are in the location
 // else show the message as you are not in the location
+let marker, circle, accuracy;
 const successCallback = (position) => {
-  const { latitude, longitude } = position.coords;
+  const { latitude, longitude, accuracy } = position.coords;
 
   const isInside = geofence(
     destinationCoordinates.lat,
@@ -74,23 +97,8 @@ const successCallback = (position) => {
     document.querySelector(
       ".coordinates"
     ).innerHTML = `Latitude: ${latitude} <br> Longitude: ${longitude}`;
-    const map = L.map("map").setView([latitude, longitude], 20);
 
-    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 18,
-      attribution: "© GeoAttend",
-    }).addTo(map);
-
-    // Send the notification to the user
-    // https://developer.mozilla.org/en-US/docs/Web/API/notification
-
-    // Ask for the permission
-    // https://developer.mozilla.org/en-US/docs/Web/API/Notification/requestPermission
-    Notification.requestPermission();
-
-    new Notification("You are in the location");
-
-    // https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification
+    showMap(latitude, longitude, accuracy);
   } else {
     document.querySelector(".message").innerHTML =
       "You are not in the location";
@@ -98,8 +106,29 @@ const successCallback = (position) => {
     document.querySelector(
       ".coordinates"
     ).innerHTML = `Latitude: ${latitude} <br> Longitude: ${longitude}`;
+
+    showMap(latitude, longitude, accuracy);
   }
 };
+function showMap(latitude, longitude, accuracy) {
+  // remove the map
+  if (marker) {
+    map.removeLayer(marker);
+  }
+
+  if (circle) {
+    map.removeLayer(circle);
+  }
+
+  marker = L.marker([latitude, longitude]);
+  circle = L.circle([latitude, longitude], { radius: accuracy });
+
+  const featureGroup = L.featureGroup([marker, circle]).addTo(map);
+
+  map.fitBounds(featureGroup.getBounds());
+
+  sendNotification();
+}
 
 const errorCallback = (error) => {
   console.log(error);
@@ -111,8 +140,8 @@ const options = {
   maximumAge: 0,
 };
 
-const watchId = navigator.geolocation.watchPosition(
-  successCallback,
-  errorCallback,
-  options
-);
+if (!navigator.geolocation) {
+  console.log("Your browser doesn't support geolocation feature!");
+} else {
+  navigator.geolocation.watchPosition(successCallback, errorCallback, options);
+}
