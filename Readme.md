@@ -137,5 +137,5 @@ GeoAttend is a powerful attendance management system that can be further enhance
 # Report a Bug
 
 - lishugupta652@gmail.com
-  To report a bug, please [open an issue]() on GitHub and provide detailed information about the bug, including steps to reproduce it and any relevant screenshots. We will investigate the issue and respond as soon as possible.
+  To report a bug, please [open an issue](https://github.com/LishuGupta652/GeoAttend/issues/new) on GitHub and provide detailed information about the bug, including steps to reproduce it and any relevant screenshots. We will investigate the issue and respond as soon as possible.
   ![dino](https://i.imgur.com/6rUiRXy.gif)
