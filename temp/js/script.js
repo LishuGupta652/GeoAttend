@@ -31,14 +31,30 @@ const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 L.Control.geocoder().addTo(map);
 
-const destination = [10.7634768, 78.8161175];
+const destinationCoordinates = {
+  lat: 10.7634768,
+  lon: 78.8161175,
+};
+
+const destination = [destinationCoordinates.lat, destinationCoordinates.lon];
 
 const destinationCircle = L.circle(destination, {
   color: "red",
   fillColor: "#f03",
 }).addTo(map);
 
+const destinationPolygon = [
+  [10.76007, 78.81812],
+  [10.76007, 78.818],
+  [10.75999, 78.818],
+  [10.75999, 78.81812],
+];
+
+const polygon = L.polygon(destinationPolygon, { color: "red" }).addTo(map);
+
+map.fitBounds(polygon.getBounds());
 destinationCircle.bindTooltip("Destination ", {});
+polygon.bindTooltip("Nitt department  ", {});
 
 // target locatoin 10.7634768, 78.8161175
 function distance(lat1, lon1, lat2, lon2) {
@@ -68,11 +84,6 @@ function geofence(lat1, lon1, lat2, lon2, radius) {
     return false;
   }
 }
-
-const destinationCoordinates = {
-  lat: 10.7634768,
-  lon: 78.8161175,
-};
 
 // if the distance is less than 100m then show the message as you are in the location
 // else show the message as you are not in the location
@@ -104,12 +115,13 @@ const successCallback = (position) => {
     document.querySelector(
       ".coordinates"
     ).innerHTML = `Latitude: ${latitude} <br> Longitude: ${longitude} 
-    <br> Accuracy : ${accuracy}
+    <br> Accuracy in (Meters)  : ${accuracy}
     `;
 
     showMap(latitude, longitude, accuracy, false);
   }
 };
+
 function showMap(latitude, longitude, accuracy, isInside) {
   // remove the map
   if (marker) {
@@ -125,10 +137,10 @@ function showMap(latitude, longitude, accuracy, isInside) {
 
   const featureGroup = L.featureGroup([marker, circle]).addTo(map);
 
-  if (setFitBound) {
-    map.fitBounds(featureGroup.getBounds());
-    setFitBound = false;
-  }
+  // if (setFitBound) {
+  //   map.fitBounds(featureGroup.getBounds());
+  //   setFitBound = false;
+  // }
   document.querySelector(".error").innerHTML = "";
   sendNotification(`You are ${isInside ? "" : "not"} in the location`);
 }
