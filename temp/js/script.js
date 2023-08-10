@@ -121,7 +121,7 @@ function showMap(latitude, longitude, accuracy, isInside) {
 
   const featureGroup = L.featureGroup([marker, circle]).addTo(map);
 
-  map.fitBounds(featureGroup.getBounds());
+  // map.fitBounds(featureGroup.getBounds());
   document.querySelector(".error").innerHTML = "";
   sendNotification(`You are ${isInside ? "" : "not"} in the location`);
 }
