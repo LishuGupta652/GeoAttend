@@ -77,6 +77,7 @@ const destinationCoordinates = {
 // if the distance is less than 100m then show the message as you are in the location
 // else show the message as you are not in the location
 let marker, circle, accuracy;
+let setFitBound = true;
 const successCallback = (position) => {
   const { latitude, longitude, accuracy } = position.coords;
 
@@ -92,7 +93,8 @@ const successCallback = (position) => {
 
     document.querySelector(
       ".coordinates"
-    ).innerHTML = `Latitude: ${latitude} <br> Longitude: ${longitude}`;
+    ).innerHTML = `Latitude: ${latitude} <br> Longitude: ${longitude}
+    <br> Accuracy : ${accuracy}`;
 
     showMap(latitude, longitude, accuracy, true);
   } else {
@@ -101,7 +103,9 @@ const successCallback = (position) => {
 
     document.querySelector(
       ".coordinates"
-    ).innerHTML = `Latitude: ${latitude} <br> Longitude: ${longitude}`;
+    ).innerHTML = `Latitude: ${latitude} <br> Longitude: ${longitude} 
+    <br> Accuracy : ${accuracy}
+    `;
 
     showMap(latitude, longitude, accuracy, false);
   }
@@ -121,7 +125,10 @@ function showMap(latitude, longitude, accuracy, isInside) {
 
   const featureGroup = L.featureGroup([marker, circle]).addTo(map);
 
-  // map.fitBounds(featureGroup.getBounds());
+  if (setFitBound) {
+    map.fitBounds(featureGroup.getBounds());
+    setFitBound = false;
+  }
   document.querySelector(".error").innerHTML = "";
   sendNotification(`You are ${isInside ? "" : "not"} in the location`);
 }
