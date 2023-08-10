@@ -117,7 +117,7 @@ function showMap(latitude, longitude, accuracy, isInside) {
   }
 
   marker = L.marker([latitude, longitude]);
-  circle = L.circle([latitude, longitude], { radius: 100 });
+  circle = L.circle([latitude, longitude], { radius: accuracy });
 
   const featureGroup = L.featureGroup([marker, circle]).addTo(map);
 
