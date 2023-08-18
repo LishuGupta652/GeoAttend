@@ -38,14 +38,14 @@ https://dzone.com/articles/geofencing-regions-with-javascript-and-here
 - Emerald ([10.7634768, 78.8161175])
 - Department (10.7599, 78.818)
 
--
-const departmentPolygon = [
-  [37, -109.05],
-  [41, -109.03],
-  [41, -102.05],
-  [37, -102.04],
-];
-
+- Department Square (
+    [
+        [10.76007, 78.81812],
+        [10.76007, 78.818],
+        [10.75999, 78.818],
+        [10.75999, 78.81812],
+    ]
+)
 ```
 
 salary box : https://www.youtube.com/shorts/JcKErZ95HDU
@@ -65,3 +65,7 @@ salary box : https://www.youtube.com/shorts/JcKErZ95HDU
 - https://github.com/9jaswag/pusher-geofencing realtime geofencing app built with Ember.js and Pusher Channels
 - https://github.com/gladchinda/realtime-geofencing-react-demo (Realtime Geofencing with React)
 - https://github.com/mrrobotisreal/where-is-ray-ray (where is rayray ) (React Native)
+
+# Patents
+
+- https://ieeexplore.ieee.org/abstract/document/9036787 (Automated Mobile Attendance System)
