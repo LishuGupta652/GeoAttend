@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.1...v0.1.2) (2023-08-18)
+
+
+### Bug Fixes
+
+* added release tags ([b8d1741](https://github.com/LishuGupta652/GeoAttend/commit/b8d174172eef4584e78599eff2207f9375bd682e))
+
 ### 0.1.1 (2023-08-18)
 
 
