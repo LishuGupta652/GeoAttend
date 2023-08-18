@@ -1,13 +1,13 @@
 {
     "name": "geoattend",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "private": true,
     "scripts": {
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "release": "release -m 'Release v%s'"
+        "release": "npx standard-version"
     },
     "dependencies": {
         "@types/node": "^20.5.0",
