@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Child from './components/Child'
+import Child from '../components/Child'
 
 export default function Home() {
 

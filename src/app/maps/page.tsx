@@ -1,6 +1,6 @@
 "use client";
 import React from 'react'
-import { AppContext } from '../contextApi/AppContext';
+import { AppContext } from '../../contextApi/AppContext';
 
 const page = () => {
     const { state } = React.useContext(AppContext);
