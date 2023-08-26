@@ -6,8 +6,50 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Geo Attend</title>
     </head>
+
+    <style>
+        .loader-suspense {
+            position: fixed;
+            z-index: 999;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+
+            border: 5px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 5px solid #343434;
+            width: 50px;
+            height: 50px;
+            -webkit-animation: spin 1s linear infinite; /* Safari */
+            animation: spin 1s linear infinite;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
     <body>
-        <div id="root"></div>
+        <div id="root">
+            <div class="loader-suspense"></div>
+        </div>
         <script type="module" src="/src/main.tsx"></script>
     </body>
 </html>
