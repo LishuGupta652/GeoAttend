@@ -68,3 +68,7 @@ salary box : https://www.youtube.com/shorts/JcKErZ95HDU
 -   https://github.com/9jaswag/pusher-geofencing realtime geofencing app built with Ember.js and Pusher Channels
 -   https://github.com/gladchinda/realtime-geofencing-react-demo (Realtime Geofencing with React)
 -   https://github.com/mrrobotisreal/where-is-ray-ray (where is rayray ) (React Native)
+
+# Frontend Credits
+
+-   https://www.tailwindawesome.com/?price=free&technology=7
