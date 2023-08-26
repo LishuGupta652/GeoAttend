@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.3...v0.1.4) (2023-08-26)
+
+
+### Features
+
+* fix plugin issue with vite ([5aeb06c](https://github.com/LishuGupta652/GeoAttend/commit/5aeb06cc4bbc5e00e0b8ed1fa69fd78eefb70e47))
+* upgrading to vite ([068bd86](https://github.com/LishuGupta652/GeoAttend/commit/068bd8620a66af0798477a5f6d557873c83ff4cb))
+
 ### [0.1.3](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.2...v0.1.3) (2023-08-19)
 
 ### [0.1.2](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.1...v0.1.2) (2023-08-18)
