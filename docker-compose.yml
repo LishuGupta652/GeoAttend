@@ -1,0 +1,23 @@
+version: '3'
+services:
+    # database:
+    #   image: mongo
+    #   volumes:
+    #     - my_data:/data/db
+    #   ports:
+    #     - "27018:27017"
+
+    frontend:
+        container_name: geoattend_frontend
+        restart: always
+        build:
+            context: .
+            dockerfile: Dockerfile
+        # depends_on:
+        #     - database
+        # environment:
+        # - MONGO_URL=mongodb://database:27018
+        ports:
+            - '3000:3000'
+# volumes:
+#   my_data:
