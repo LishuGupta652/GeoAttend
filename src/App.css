@@ -3,6 +3,21 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
+  --text: rgb(0, 0, 0);
+  --background: #ffffff;
+  --primary: #8fb3ff;
+  --secondary: #ebf1ff;
+  --accent: #d41d6d;
+
+  /**
+  Dark Mode Colors
+  --text: #fafafa;
+  --background: #0d0d0c;
+  --primary: #8fb3ff;
+  --secondary: #ebf1ff;
+  --accent: #d41d6d;
+    */
 }
 
 .logo {
@@ -18,7 +33,7 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
+@keyframes logo-spin { 
   from {
     transform: rotate(0deg);
   }
