@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.5...v0.1.6) (2023-08-30)
+
+
+### Features
+
+* dockerized appp ([77c53fd](https://github.com/LishuGupta652/GeoAttend/commit/77c53fd54a1fced56f9f4602f2eb4c8981fbbafb))
+
+
+### Bug Fixes
+
+* dockerize application ([7ae4931](https://github.com/LishuGupta652/GeoAttend/commit/7ae49310908c8859d6f8b051c9f3bbdd4e4c279e))
+
 ### [0.1.5](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.4...v0.1.5) (2023-08-30)
 
 
