@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.4...v0.1.5) (2023-08-30)
+
+
+### Bug Fixes
+
+* dockerize application ([951ed5c](https://github.com/LishuGupta652/GeoAttend/commit/951ed5c57182a0f614afafe45252dde2d61646cb))
+* dockerize application ([a928725](https://github.com/LishuGupta652/GeoAttend/commit/a928725834032fb4d7159f518f0a931bc4c5d018))
+* dockerize application ([712a15b](https://github.com/LishuGupta652/GeoAttend/commit/712a15b3bc8c137bb4c3c1e7c83548a7f86773c3))
+* loading container ([4fab632](https://github.com/LishuGupta652/GeoAttend/commit/4fab6326fb770ba126064cca0934b970a89f1585))
+* netlify config ([f5b9aa4](https://github.com/LishuGupta652/GeoAttend/commit/f5b9aa449c2506f2512d22983fc977e004f00e37))
+
 ### [0.1.4](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.3...v0.1.4) (2023-08-26)
 
 
