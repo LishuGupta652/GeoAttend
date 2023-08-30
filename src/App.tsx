@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import './App.css'
+import { AppContext } from './contextApi/AppContext'
 
 function App() {
   const [count, setCount] = useState(0)
+  const { state } = useContext(AppContext);
 
   return (
     <>

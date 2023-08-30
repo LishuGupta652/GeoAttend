@@ -18,6 +18,12 @@ services:
         # environment:
         # - MONGO_URL=mongodb://database:27018
         ports:
-            - '3000:3000'
+            - "3000:3000"
+        # volumes: 
+        #   - type: bind
+        #     source: ./
+        #     target: /app
+        # tty: true
+        # tty is used to keep the container running
 # volumes:
 #   my_data:
