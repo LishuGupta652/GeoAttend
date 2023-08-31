@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.7...v0.1.8) (2023-08-31)
+
+
+### Bug Fixes
+
+* appcontext with local storage ([efa2ebb](https://github.com/LishuGupta652/GeoAttend/commit/efa2ebbc7360a27a1b63a2941f6c312284246af2))
+
 ### [0.1.7](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.6...v0.1.7) (2023-08-30)
 
 ### [0.1.6](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.5...v0.1.6) (2023-08-30)
