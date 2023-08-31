@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.10](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.9...v0.1.10) (2023-08-31)
+
+
+### Features
+
+* added react router dom ([4c9b3b3](https://github.com/LishuGupta652/GeoAttend/commit/4c9b3b37f857ed1a8a0c989dd98ead96e7ad186c))
+
 ### [0.1.9](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.8...v0.1.9) (2023-08-31)
 
 
