@@ -9,6 +9,11 @@
 
 # Project Summary (NEVER OVER-ENGINEER)
 
+-   Automation
+-   Production Ready
+-   Scalable
+-   Maintainable
+
 # GeoAttend: Revolutionizing Attendance with Geofencing
 
 Introducing **GeoAttend**, a cutting-edge Geospatial Attendance System designed to streamline attendance tracking for organizations and events of all sizes. With a robust set of features and a

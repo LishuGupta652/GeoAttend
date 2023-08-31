@@ -1,25 +1,23 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import './App.css'
 import { AppContext } from './contextApi/AppContext'
+import { APP_STATE_ACTION } from './types/types';
 
 function App() {
-  const [count, setCount] = useState(0)
-  const { state } = useContext(AppContext);
+  const { state, dispatch } = useContext(AppContext);
 
+  const toggleTheme = () => {
+    dispatch({
+      type: APP_STATE_ACTION.TOGGLE_THEME,
+    })
+  }
   return (
     <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div className="card"
+      >
+        {state.theme}
+        <button onClick={toggleTheme}>Change theme</button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
