@@ -2,7 +2,6 @@ import { useContext } from 'react'
 import './App.css'
 import { AppContext } from './contextApi/AppContext'
 import { ThemeProvider } from "styled-components";
-import { darkTheme, lightTheme } from './utils/constants';
 import {
   BrowserRouter,
   Routes,
@@ -11,6 +10,8 @@ import {
 import NotFound from './pages/NotFound';
 import Login from './pages/Login';
 import Header from './components/Header';
+import { darkTheme, lightTheme } from './utils/theme';
+import Home from './pages/Home';
 
 function App() {
   const { state } = useContext(AppContext);
@@ -21,7 +22,7 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
-            <Route path="/" element={<div>Welcome to geoattend !!!</div>} />
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

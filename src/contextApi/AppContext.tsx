@@ -1,7 +1,8 @@
-import { useEffect, createContext, Dispatch, useReducer } from "react";
+import { useEffect, createContext, Dispatch, useReducer, useMemo } from "react";
 import { appStateReducer, AppStateReducerActionType } from "../reducers/appStateReducer";
 import { AppStateType, APP_STATE_ACTION } from "../types/types";
 import { getInitialTheme } from "../utils/helper";
+
 
 const initialAppState: AppStateType = {
     theme: getInitialTheme(),
@@ -31,8 +32,9 @@ const AppContextProvider = ({ children }: {
             });
         }
     }, [])
+    const value = useMemo(() => ({ state, dispatch }), [state, dispatch]);
     return (
-        <AppContext.Provider value={{ state, dispatch }}>
+        <AppContext.Provider value={value}>
             {children}
         </AppContext.Provider>
     );

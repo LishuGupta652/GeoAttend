@@ -1,12 +1,16 @@
 import { GET_API_TEST } from './constants';
+import axios from 'axios';
 
 export const getApiTest = async () => {
-    const res = await fetch(GET_API_TEST, {
-        method: 'GET',
-        headers: {
-            Accept: 'application/json',
-        },
-    })
+    try {
 
-    return await res.json();
+        const response = await axios.get(GET_API_TEST);
+        console.log(response.data)
+        return response.data;
+
+    } catch (error: any) {
+        console.error(error);
+        const errorMessage = error?.response.data.error || error?.message;
+        return errorMessage;
+    }
 }
