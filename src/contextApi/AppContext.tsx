@@ -3,11 +3,9 @@ import { appStateReducer, AppStateReducerActionType } from "../reducers/appState
 import { AppStateType, APP_STATE_ACTION } from "../types/types";
 import { getInitialTheme } from "../utils/helper";
 
-
 const initialAppState: AppStateType = {
     theme: getInitialTheme(),
 };
-
 export const AppContext = createContext<{
     state: AppStateType,
     dispatch: Dispatch<AppStateReducerActionType>
