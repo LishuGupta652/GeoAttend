@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.9](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.8...v0.1.9) (2023-08-31)
+
+
+### Bug Fixes
+
+* moduling context ([e30fd22](https://github.com/LishuGupta652/GeoAttend/commit/e30fd220d07af89f69eaf9ef2aae07d8d52a4d8e))
+
 ### [0.1.8](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.7...v0.1.8) (2023-08-31)
 
 
