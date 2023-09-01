@@ -1,10 +1,8 @@
-import { useEffect } from "react";
 import { useMutation } from "react-query";
-import { API_Response } from "../types/types";
-import { getApiTest, signupUser } from '../utils/api';
+import { signupUser } from '../utils/api';
 import toast from 'react-hot-toast';
-import Error from "../components/Error/Error";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { signupValidation } from "../utils/helper";
 
 const Signup = () => {
     const { mutate } = useMutation("signup_user", signupUser, {
@@ -29,24 +27,8 @@ const Signup = () => {
     return (
         <>
             <Formik
-                initialValues={{ email: '', password: '' }}
-                validate={values => {
-                    const errors = {} as any;
-                    if (!values.email) {
-                        errors.email = 'Required';
-                    } else if (
-                        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-                    ) {
-                        errors.email = 'Invalid email address';
-                    }
-
-                    if (!values.password) {
-                        errors.password = 'Required';
-                    } else if (values.password.length < 6) {
-                        errors.password = 'Password must be atleast 6 characters';
-                    }
-                    return errors;
-                }}
+                initialValues={{ name: "", email: '', password: '' }}
+                validate={signupValidation}
                 onSubmit={(values, { setSubmitting }) => {
                     setTimeout(() => {
                         alert(JSON.stringify(values, null, 2));
@@ -56,12 +38,13 @@ const Signup = () => {
             >
                 {({ isSubmitting }) => (
                     <Form>
-                        <Field type="email" name="email" placeholder="enter your email" />
+                        <Field type="text" name="name" placeholder="Enter your name" />
+                        <ErrorMessage name="password" component="div" />
                         <br />
+                        <Field type="email" name="email" placeholder="enter your email" />
                         <ErrorMessage name="email" component="div" />
                         <br />
                         <Field type="password" name="password" placeholder="enter your password" />
-                        <br />
                         <ErrorMessage name="password" component="div" />
                         <br />
                         <button type="submit" disabled={isSubmitting}>
