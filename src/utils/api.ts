@@ -1,5 +1,5 @@
 import { API_Response, API_Response_Error } from './../types/types';
-import { BASE_USER_API_URL, GET_API_TEST, API_SIGNUP } from './constants';
+import { BASE_USER_API_URL, GET_API_TEST, API_SIGNUP, API_LOGIN } from './constants';
 import axios from 'axios';
 
 const userApiClient = axios.create({
@@ -31,6 +31,13 @@ export const getApiTest = async (): Promise<API_Response | API_Response_Error> =
 export const signupUser = async (data: any): Promise<API_Response | API_Response_Error> => {
     return await request({
         url: API_SIGNUP,
+        method: 'POST',
+        data
+    });
+}
+export const loginUser = async (data: any): Promise<API_Response | API_Response_Error> => {
+    return await request({
+        url: API_LOGIN,
         method: 'POST',
         data
     });

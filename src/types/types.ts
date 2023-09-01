@@ -12,6 +12,22 @@ export enum APP_STATE_ACTION {
     TOGGLE_THEME = "TOGGLE_THEME",
 }
 
+export type USER_TOKEN_TYPE = {
+    name: string;
+    email: string;
+    _id: string;
+    iat: number;
+    exp: number;
+
+}
+
+export type LOGIN_USER_TYPE = {
+    email: string;
+    password: string;
+}
+export type SIGNUP_USER_TYPE = LOGIN_USER_TYPE & {
+    name: string;
+}
 
 export type API_Response = any;
 export type API_Response_Error = any;

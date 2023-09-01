@@ -33,7 +33,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           />
         </ThemeProvider>
       </AppContextProvider>
-      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+      {/* <ReactQueryDevtools initialIsOpen={false} position="bottom-right" /> */}
     </QueryClientProvider>
   </React.StrictMode>,
 )

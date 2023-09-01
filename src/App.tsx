@@ -14,6 +14,7 @@ import { darkTheme, lightTheme } from './utils/theme';
 import Home from './pages/Home';
 import Test from './pages/Test';
 import Signup from './pages/Signup';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   const { state } = useContext(AppContext);
@@ -27,6 +28,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/test" element={<Test />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
