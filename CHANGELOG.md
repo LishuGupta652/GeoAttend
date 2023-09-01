@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.1.13](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.12...v0.1.13) (2023-09-01)
 
+### [0.1.13](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.12...v0.1.13) (2023-09-01)
+
 ### Features
 
 -   basic setup ([0f022f0](https://github.com/LishuGupta652/GeoAttend/commit/0f022f0964e443bd5bc6fd2959a132ed36a93ee7))
