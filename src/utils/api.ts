@@ -1,16 +1,37 @@
-import { GET_API_TEST } from './constants';
+import { API_Response, API_Response_Error } from './../types/types';
+import { BASE_USER_API_URL, GET_API_TEST, API_SIGNUP } from './constants';
 import axios from 'axios';
 
-export const getApiTest = async () => {
-    try {
+const userApiClient = axios.create({
+    baseURL: BASE_USER_API_URL,
+    headers: {
+        "Content-type": "application/json",
+    },
+});
 
-        const response = await axios.get(GET_API_TEST);
-        console.log(response.data)
-        return response.data;
+const request = ({ ...options }) => {
+    userApiClient.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
 
-    } catch (error: any) {
-        console.error(error);
-        const errorMessage = error?.response.data.error || error?.message;
-        return errorMessage;
+    const onSuccess = (response: any) => response.data;
+    const onError = (error: any) => {
+        throw error;
     }
+
+    return userApiClient(options).then(onSuccess).catch(onError);
+}
+
+
+export const getApiTest = async (): Promise<API_Response | API_Response_Error> => {
+    return await request({
+        url: GET_API_TEST,
+        method: 'GET',
+    });
+}
+
+export const signupUser = async (data: any): Promise<API_Response | API_Response_Error> => {
+    return await request({
+        url: API_SIGNUP,
+        method: 'POST',
+        data
+    });
 }

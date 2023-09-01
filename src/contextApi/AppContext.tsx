@@ -23,7 +23,7 @@ const AppContextProvider = ({ children }: {
     >(appStateReducer, initialAppState);
 
     useEffect(() => {
-        const appDataFromLocalStorage: AppStateType = JSON.parse(localStorage.getItem("appData") || "{}") as AppStateType;
+        const appDataFromLocalStorage: AppStateType = JSON.parse(localStorage.getItem("appData") ?? "{}") as AppStateType;
 
         if (appDataFromLocalStorage) {
             dispatch({

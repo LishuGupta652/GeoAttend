@@ -12,3 +12,6 @@ export enum APP_STATE_ACTION {
     TOGGLE_THEME = "TOGGLE_THEME",
 }
 
+
+export type API_Response = any;
+export type API_Response_Error = any;
