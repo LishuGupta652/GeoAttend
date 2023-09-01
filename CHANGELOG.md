@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.12](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.11...v0.1.12) (2023-09-01)
+
+
+### Features
+
+* react query setup ([890acd8](https://github.com/LishuGupta652/GeoAttend/commit/890acd8779a5c6297c00c29ec4d8da24a46cf9e9))
+* update broswer router from react-router-dom ([eb5d628](https://github.com/LishuGupta652/GeoAttend/commit/eb5d6288e2cd40f59292a167342b3b5f2531024d))
+
+
+### Bug Fixes
+
+* use router ([c06eb3b](https://github.com/LishuGupta652/GeoAttend/commit/c06eb3b00739d49e0bae3ac1accbc9bfbe200483))
+
 ### [0.1.11](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.10...v0.1.11) (2023-08-31)
 
 ### [0.1.10](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.9...v0.1.10) (2023-08-31)
