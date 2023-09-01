@@ -1,24 +1,4 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 
-  --text: rgb(0, 0, 0);
-  --background: #ffffff;
-  --primary: #8fb3ff;
-  --secondary: #ebf1ff;
-  --accent: #d41d6d;
-
-  
-  /* Dark Mode Colors
-  --text: #fafafa;
-  --background: #0d0d0c;
-  --primary: #8fb3ff;
-  --secondary: #ebf1ff;
-  --accent: #d41d6d;
-     */
-}
 
 
 :root {
@@ -34,6 +14,21 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  
+  /* --text: rgb(0, 0, 0);
+  --background: #ffffff;
+  --primary: #8fb3ff;
+  --secondary: #ebf1ff;
+  --accent: #d41d6d;  */
+  
+  /* Dark Mode Colors
+  --text: #fafafa;
+  --background: #0d0d0c;
+  --primary: #8fb3ff;
+  --secondary: #ebf1ff;
+  --accent: #d41d6d;
+     */
 }
 
 a {
@@ -48,10 +43,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -67,7 +58,20 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
+  color: #ffffff;
   cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+input {
+  border-radius: 8px;
+  border: 1px solid #1a1a1a;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: #ffffff;
   transition: border-color 0.25s;
 }
 

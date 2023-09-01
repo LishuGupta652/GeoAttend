@@ -15,7 +15,7 @@ const Login = () => {
     return (
         <>
             <Error>
-                {JSON.stringify(data.data.message)}
+                {JSON.stringify(data?.data?.message || " ")}
             </Error>
         </>
     )

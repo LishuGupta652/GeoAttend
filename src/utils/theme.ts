@@ -1,3 +1,21 @@
+import { createTheme } from '@mui/material/styles';
+
+export const materialUITheme = createTheme({
+    palette: {
+        primary: {
+            light: '#8fb3ff', // Corresponding to your --primary color in light mode
+            main: '#30336b', // Corresponding to your --background color in light mode
+            dark: '#0d0d0c', // Corresponding to your --background color in dark mode
+            contrastText: '#fff', // You can set this as appropriate
+        },
+        secondary: {
+            light: '#ebf1ff', // Corresponding to your --secondary color in light mode
+            main: '#d41d6d', // Corresponding to your --accent color in light mode
+            dark: '#d41d6d', // Corresponding to your --accent color in dark mode
+            contrastText: '#000', // You can set this as appropriate
+        },
+    },
+});
 
 export const lightTheme = {
     header: {
