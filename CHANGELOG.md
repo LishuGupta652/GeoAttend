@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.14](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.12...v0.1.14) (2023-09-01)
+
+
+### Features
+
+* basic setup ([0f022f0](https://github.com/LishuGupta652/GeoAttend/commit/0f022f0964e443bd5bc6fd2959a132ed36a93ee7))
+* signup page ([268dcb1](https://github.com/LishuGupta652/GeoAttend/commit/268dcb1835a84d3f1d735bb700ecbfc054355969))
+
 ### [0.1.13](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.12...v0.1.13) (2023-09-01)
 
 
