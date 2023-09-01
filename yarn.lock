@@ -2534,6 +2534,11 @@
   "resolved" "https://registry.npmjs.org/json5/-/json5-2.2.3.tgz"
   "version" "2.2.3"
 
+"jwt-decode@^3.1.2":
+  "integrity" "sha512-UfpWE/VZn0iP50d8cz9NrZLM9lSWhcJ+0Gt/nm4by88UL+J1SiKN8/5dkjMmbEzwL2CAe+67GsegCbIKtbp75A=="
+  "resolved" "https://registry.npmjs.org/jwt-decode/-/jwt-decode-3.1.2.tgz"
+  "version" "3.1.2"
+
 "keyv@^4.5.3":
   "integrity" "sha512-QCiSav9WaX1PgETJ+SpNnx2PRRapJ/oRSXM4VO5OGYGSjrxbKPVFVhB3l2OCbLCk329N8qyAtsJjSjvVBWzEug=="
   "resolved" "https://registry.npmjs.org/keyv/-/keyv-4.5.3.tgz"
