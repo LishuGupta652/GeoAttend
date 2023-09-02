@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.18](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.17...v0.1.18) (2023-09-02)
+
+
+### Bug Fixes
+
+* manage redirects ([c283d60](https://github.com/LishuGupta652/GeoAttend/commit/c283d60266a76c3e184b8334bd61d345ab76ab0b))
+
 ### [0.1.17](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.16...v0.1.17) (2023-09-02)
 
 
