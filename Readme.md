@@ -19,6 +19,8 @@ user-friendly interface, GeoAttend ensures accurate and efficient attendance man
 
 -   **Backend:** Node.js, Express.js, MongoDB, Mongoose, JWT, Bcrypt, Nodemailer, Nodemailer Sendgrid Transport, Nodemon, Concurrently, Axios, Dotenv, Cors, Body Parser, Cookie Parser, Multer, Multer
 
+-   **Libraries:** Leaflet, React-globe.gl, useHooks
+
 -   **API Testing:** Postman
 
 -   **Development Environment:** VS Code, Git, GitHub, Heroku, Netlify, MongoDB Atlas

@@ -15,6 +15,8 @@ import Home from './pages/Home';
 import Test from './pages/Test';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
+import Geolocation from './pages/Geolocation';
+import LeafletSample from './components/Geo/LeafletSample';
 
 function App() {
   const { state } = useContext(AppContext);
@@ -29,6 +31,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/geolocation" element={<Geolocation />} />
             <Route path="/test" element={<Test />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
