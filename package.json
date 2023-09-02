@@ -1,10 +1,12 @@
 {
     "name": "geoattend",
     "private": true,
-    "version": "0.1.14",
+    "version": "0.1.15",
     "type": "module",
     "scripts": {
         "dev": "vite --host",
+        "dev:frontend": "npm run dev",
+        "dev:backend": "",
         "build": "tsc && vite build",
         "prod": "tsc && vite build && npm run lint && npm run release  && npm run push:tags",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 100",
