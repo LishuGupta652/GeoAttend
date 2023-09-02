@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.16](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.15...v0.1.16) (2023-09-02)
+
+
+### Features
+
+* adding server to same repo ([39d3081](https://github.com/LishuGupta652/GeoAttend/commit/39d3081ba6bb8eb079068a7a3cbacda19215d182))
+
 ### [0.1.15](https://github.com/LishuGupta652/GeoAttend/compare/v0.1.14...v0.1.15) (2023-09-02)
 
 
