@@ -32,6 +32,9 @@ const Header = () => {
                             <Link to="/">Home</Link>
                         </Button>
 
+                        <Button color="inherit">
+                            <Link to="/geolocation">Geolocation</Link>
+                        </Button>
                         {
                             isUserLoggedIn && (
                                 <>
@@ -41,6 +44,7 @@ const Header = () => {
                                     <Button color="inherit">
                                         <div onClick={logout}>Logout</div>
                                     </Button>
+
                                 </>
                             )
                         }
