@@ -16,7 +16,7 @@
         "docker:up": "docker-compose up ",
         "docker:start": "docker-compose build && docker-compose up ",
         "docker:build:test": "docker build -t geoattend .",
-        "prod": "tsc && vite build && npm run lint && npm run release  && npm run push:tags "
+        "prod": "vite build && npm run lint && npm run release  && npm run push:tags "
     },
     "dependencies": {
         "@emotion/react": "^11.11.1",

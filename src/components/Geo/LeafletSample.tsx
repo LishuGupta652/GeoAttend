@@ -19,7 +19,7 @@ const LeaftLetContainer = styled.div`
 
 `
 function LocationMarker() {
-    const [position, setPosition] = useState(null)
+    const [position, setPosition] = useState(null as any)
     const map = useMap();
     map.locate().on("locationfound", function (e) {
         setPosition(e.latlng);

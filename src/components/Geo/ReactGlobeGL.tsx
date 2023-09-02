@@ -5,15 +5,15 @@ export const ReactGlobeGL = ({ state }) => {
     return (
         <div className="globe">
             <Globe
-                ref={(el) => {
-                    if (el) {
-                        el.pointOfView({
-                            altitude: 2,
-                            lat: state.latitude,
-                            lng: state.longitude
-                        });
-                    }
-                }}
+                // ref={(el: any) => {
+                //     if (el) {
+                //         el.pointOfView({
+                //             altitude: 2,
+                //             lat: state.latitude,
+                //             lng: state.longitude
+                //         });
+                //     }
+                // }}
                 width={300}
                 height={300}
                 backgroundColor="#0f0d0e"
