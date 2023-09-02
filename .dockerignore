@@ -31,3 +31,5 @@ kubernetes
 
 dist
 .env
+
+/server/node_modules
