@@ -1,23 +1,106 @@
-# Problem why this project is not possible
-
--   Web app can't access location in background
--   Web app can't access location when screen is off
--   Web app can't access location when app is closed
--   Web app can't access location when app is not in use
--   Web app can't access location when app is not in foreground
--   Web app can't access location when app is not in focus
-
-# Project Summary (NEVER OVER-ENGINEER)
-
--   Automation
--   Production Ready
--   Scalable
--   Maintainable
+![logo](https://i.imgur.com/lU5LxHe.png)
 
 # GeoAttend: Revolutionizing Attendance with Geofencing
 
 Introducing **GeoAttend**, a cutting-edge Geospatial Attendance System designed to streamline attendance tracking for organizations and events of all sizes. With a robust set of features and a
 user-friendly interface, GeoAttend ensures accurate and efficient attendance management through advanced geofencing technology.
+
+## Screenshots
+
+![Screenshot 2023-09-02 221546](https://i.imgur.com/nZRuZ2A.png)
+
+![Screenshot 2023-09-02 221434](https://i.imgur.com/DJ9VjxK.png)
+
+![Screenshot 2023-09-02 221514](https://i.imgur.com/rlq9m1C.png)
+
+## Technologies Used:
+
+-   **Frontend:** React, Redux, Material UI, React Router, React Hooks, React Context API, React Leaflet, React Geolocation, React Google Maps, React Google Charts, React Google Login, React Google
+
+-   **Backend:** Node.js, Express.js, MongoDB, Mongoose, JWT, Bcrypt, Nodemailer, Nodemailer Sendgrid Transport, Nodemon, Concurrently, Axios, Dotenv, Cors, Body Parser, Cookie Parser, Multer, Multer
+
+-   **API Testing:** Postman
+
+-   **Development Environment:** VS Code, Git, GitHub, Heroku, Netlify, MongoDB Atlas
+
+-   **Project Management:** Figma, Lucidchart, Google Docs
+
+-   **Version Control:** Git, GitHub
+
+-   **Deployment:** Heroku, Netlify, MongoDB Atlas
+
+## Installation
+
+#### Install Client
+
+```bash
+  npm install
+```
+
+#### Install Server
+
+```bash
+  cd server
+  npm install
+```
+
+## Run Locally
+
+Open frontend and backend in different terminals. Go to the project directory
+
+#### Start server
+
+Install dependencies
+
+```bash
+  cd server
+  npm install
+```
+
+```bash
+  npm run start:backend
+```
+
+#### Start Client
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+```bash
+  npm run start:frontend
+```
+
+## Deployment
+
+To deploy this project run
+
+```bash
+  npm run prod
+```
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+#### Server Env
+
+> put the env inside ./server/.env
+
+`MONGODB_URI`
+
+`TOKEN_SECRET`
+
+`PORT`
+
+# Project Summary
+
+-   Automation
+-   Production Ready
+-   Scalable
+-   Maintainable
 
 ## Key Features:
 
@@ -66,48 +149,7 @@ reducing the administrative burden on organizations.
 GeoAttend also offers a diverse set of features, including event creation, location setting, event scheduling, and user management, empowering administrators to manage events with ease. The platform
 also caters to a wide range of organizations, including universities, event halls, classrooms, and more, offering seamless attendance management for hundreds of events across different locations.
 
-## Technical Details:
-
-### Technologies Used:
-
--   **Frontend:** React, Redux, Material UI, React Router, React Hooks, React Context API, React Leaflet, React Geolocation, React Google Maps, React Google Charts, React Google Login, React Google
-    Places Autocomplete, React Google Recaptcha, React Google Maps Loader, React Google Maps API, React Google Maps Directions, React Google Maps Loader
-
--   **Backend:** Node.js, Express.js, MongoDB, Mongoose, JWT, Bcrypt, Nodemailer, Nodemailer Sendgrid Transport, Nodemon, Concurrently, Axios, Dotenv, Cors, Body Parser, Cookie Parser, Multer, Multer
-    S3, AWS SDK, AWS S3, GeoLib, GeoLib Clean Coordinates, GeoLib Get Center, GeoLib Get Bounding Box, GeoLib Get Distance, GeoLib Get Rhumb Line, GeoLib Get Rhumb Line Between, GeoLib Get Rhumb Line
-    Point, GeoLib Get Rhumb Line Point Between, GeoLib Get Great Circle, GeoLib Get Great Circle Between, GeoLib Get Great Circle Point, GeoLib Get Great Circle Point Between, GeoLib Get Nearest,
-    GeoLib Get Nearest Point, GeoLib Get Nearest Point Of Line, GeoLib Get Nearest Point Of Line Segment, GeoLib Get Nearest Point Of Polygon, GeoLib Get Nearest Point Of Polygon Edge, GeoLib Get
-    Nearest Point Of Polygon Vertex, GeoLib Get Nearest Point Of Polygon
-
--   **API Testing:** Postman, Jest, Supertest
-
--   **Development Environment:** VS Code, Git, GitHub, Heroku, Netlify, MongoDB Atlas, AWS S3
-
--   **Project Management:** Trello, Figma, Lucidchart, Google Docs, Google Slides, Google Sheets, Google Forms, Google Meet, Google Drive, Google Calendar, Google Maps, Google Places, Google
-    Recaptcha, Google Analytics, Google Search Console, Google Cloud Platform, Google Cloud Storage, Google Cloud Functions, Google Cloud Run, Google Cloud Build, Google Cloud SQL, Google Cloud
-    Firestore, Google Cloud Pub/Sub, Google Cloud CDN, Google Cloud IAM, Google Cloud Billing, Google Cloud Logging, Google Cloud Monitoring, Google Cloud Error Reporting, Google Cloud Debugger,
-    Google Cloud Profiler, Google Cloud Trace, Google Cloud Security Scanner, Google Cloud Web Security Scanner, Google Cloud API Gateway, Google Cloud Endpoints, Google Cloud Memorystore, Google
-    Cloud Scheduler, Google Cloud Tasks, Google Cloud Secret Manager, Google Cloud Key Management Service, Google Cloud Storage Transfer Service, Google Cloud Data Transfer Service, Google Cloud
-    BigQuery, Google Cloud Dataflow, Google Cloud Dataproc, Google Cloud Datalab, Google Cloud Data Studio, Google Cloud Data Catalog, Google Cloud Data Fusion, Google Cloud Data Loss Prevention,
-    Google Cloud Data Labeling Service, Google Cloud Data Migration Service, Google Cloud Data Catalog, Google Cloud Data
-
--   **Version Control:** Git, GitHub
-
--   **Deployment:** Heroku, Netlify, MongoDB Atlas, AWS S3
-
-### System Architecture:
-
-![System Architecture](./images/system-architecture.png)
-
-### Database Schema:
-
-![Database Schema](./images/database-schema.png)
-
-### API Routes:
-
-![API Routes](./images/api-routes.png)
-
-## Drawbacks to Consider and Handle (CHAT GPT)
+## Drawbacks to Consider and Handle
 
 1. **Battery Drain:** Continuous use of geolocation services can lead to increased battery consumption on users' devices. This can be a concern, especially for longer events or when users forget to
    turn off location services.
@@ -181,6 +223,10 @@ GeoAttend is a powerful attendance management system that can be further enhance
     access.
 
 -   **One User Per Device:** Restricting users to one device per account can help prevent unauthorized access and improve attendance accuracy.
+
+# Problem why this project is not possible on Web App (PWA) ?
+
+-   Web app can't access location in background / when screen is off / when app is closed / when app is not in use / when app is not in foreground / when app is not in focus.
 
 # Report a Bug
 

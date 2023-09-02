@@ -1,23 +1,23 @@
 {
-  "name": "authentication",
-  "version": "1.0.0",
-  "description": "app made using express to do login logout jwt etc",
-  "main": "index.js",
-  "scripts": {
-    "start:dev": "npx nodemon index.js",
-    "start": "node index.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^5.0.1",
-    "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "joi": "^17.4.2",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.0.13",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.15"
-  }
+    "name": "authentication",
+    "version": "1.0.0",
+    "description": "app made using express to do login logout jwt etc",
+    "main": "index.js",
+    "scripts": {
+        "start:dev": "npx nodemon index.js",
+        "start": "node index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "cors": "^2.8.5",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "joi": "^17.4.2",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.0.13",
+        "morgan": "^1.10.0",
+        "nodemon": "^2.0.15"
+    }
 }

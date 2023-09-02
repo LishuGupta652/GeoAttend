@@ -8,7 +8,6 @@
         "start:frontend": "npm run start:dev",
         "start:backend": "cd server && npm run start:dev",
         "build": "tsc && vite build",
-        "prod": "tsc && vite build && npm run lint && npm run release  && npm run push:tags",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 100",
         "preview": "vite preview",
         "release": "npx standard-version",
@@ -16,7 +15,8 @@
         "docker:build": "docker-compose build",
         "docker:up": "docker-compose up ",
         "docker:start": "docker-compose build && docker-compose up ",
-        "docker:build:test": "docker build -t geoattend ."
+        "docker:build:test": "docker build -t geoattend .",
+        "prod": "tsc && vite build && npm run lint && npm run release  && npm run push:tags"
     },
     "dependencies": {
         "@emotion/react": "^11.11.1",
