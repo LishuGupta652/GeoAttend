@@ -22,67 +22,55 @@
 //   .setContent("I am a standalone popup.")
 //   .openOn(map);
 
-const map = L.map("map", {
-  center: [10, 78],
-  zoom: 13,
+const map = L.map('map', {
+    center: [10, 78],
+    zoom: 13
 });
-const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  attribution: "",
+const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: ''
 }).addTo(map);
 L.Control.geocoder().addTo(map);
 
 const destinationCoordinates = {
-  lat: 10.7634768,
-  lon: 78.8161175,
+    lat: 10.7634768,
+    lon: 78.8161175
 };
 
 const destination = [destinationCoordinates.lat, destinationCoordinates.lon];
 
 const destinationCircle = L.circle(destination, {
-  color: "red",
-  fillColor: "#f03",
+    color: 'red',
+    fillColor: '#f03'
 }).addTo(map);
 
-const destinationPolygon = [
-  [10.76007, 78.81812],
-  [10.76007, 78.818],
-  [10.75999, 78.818],
-  [10.75999, 78.81812],
-];
-
-const polygon = L.polygon(destinationPolygon, { color: "red" }).addTo(map);
+const polygon = L.polygon(destinationPolygon, { color: 'red' }).addTo(map);
 
 map.fitBounds(polygon.getBounds());
-destinationCircle.bindTooltip("Destination ", {});
-polygon.bindTooltip("Nitt department  ", {});
+destinationCircle.bindTooltip('Destination ', {});
+polygon.bindTooltip('Nitt department  ', {});
 
 // target locatoin 10.7634768, 78.8161175
 function distance(lat1, lon1, lat2, lon2) {
-  const earthRadius = 6371; // Radius of the earth in km
-  const dLat = deg2rad(lat2 - lat1); // deg2rad below
-  const dLon = deg2rad(lon2 - lon1);
-  const a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos(deg2rad(lat1)) *
-      Math.cos(deg2rad(lat2)) *
-      Math.sin(dLon / 2) *
-      Math.sin(dLon / 2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  const d = earthRadius * c; // Distance in km
-  return d;
+    const earthRadius = 6371; // Radius of the earth in km
+    const dLat = deg2rad(lat2 - lat1); // deg2rad below
+    const dLon = deg2rad(lon2 - lon1);
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const d = earthRadius * c; // Distance in km
+    return d;
 }
 
 function deg2rad(deg) {
-  return deg * (Math.PI / 180);
+    return deg * (Math.PI / 180);
 }
 
 function geofence(lat1, lon1, lat2, lon2, radius) {
-  const d = distance(lat1, lon1, lat2, lon2);
-  if (d <= radius) {
-    return true;
-  } else {
-    return false;
-  }
+    const d = distance(lat1, lon1, lat2, lon2);
+    if (d <= radius) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 // if the distance is less than 100m then show the message as you are in the location
@@ -90,110 +78,100 @@ function geofence(lat1, lon1, lat2, lon2, radius) {
 let marker, circle, accuracy;
 let setFitBound = true;
 const successCallback = (position) => {
-  const { latitude, longitude, accuracy } = position.coords;
+    const { latitude, longitude, accuracy } = position.coords;
 
-  const isInside = geofence(
-    destinationCoordinates.lat,
-    destinationCoordinates.lon,
-    latitude,
-    longitude,
-    0.1
-  );
-  if (isInside) {
-    document.querySelector(".message").innerHTML = "You are in the location";
+    const isInside = geofence(destinationCoordinates.lat, destinationCoordinates.lon, latitude, longitude, 0.1);
 
-    document.querySelector(
-      ".coordinates"
-    ).innerHTML = `Latitude: ${latitude} <br> Longitude: ${longitude}
+    if (isInside) {
+        document.querySelector('.message').innerHTML = 'You are in the location';
+
+        document.querySelector('.coordinates').innerHTML = `Latitude: ${latitude} <br> Longitude: ${longitude}
     <br> Accuracy : ${accuracy}`;
 
-    showMap(latitude, longitude, accuracy, true);
-  } else {
-    document.querySelector(".message").innerHTML =
-      "You are not in the location";
+        showMap(latitude, longitude, accuracy, true);
+    } else {
+        document.querySelector('.message').innerHTML = 'You are not in the location';
 
-    document.querySelector(
-      ".coordinates"
-    ).innerHTML = `Latitude: ${latitude} <br> Longitude: ${longitude} 
+        document.querySelector('.coordinates').innerHTML = `Latitude: ${latitude} <br> Longitude: ${longitude} 
     <br> Accuracy in (Meters)  : ${accuracy}
     `;
 
-    showMap(latitude, longitude, accuracy, false);
-  }
+        showMap(latitude, longitude, accuracy, false);
+    }
 };
 
 function showMap(latitude, longitude, accuracy, isInside) {
-  // remove the map
-  if (marker) {
-    map.removeLayer(marker);
-  }
+    // remove the map
+    if (marker) {
+        map.removeLayer(marker);
+    }
 
-  if (circle) {
-    map.removeLayer(circle);
-  }
+    if (circle) {
+        map.removeLayer(circle);
+    }
 
-  marker = L.marker([latitude, longitude]);
-  circle = L.circle([latitude, longitude], { radius: accuracy });
+    marker = L.marker([latitude, longitude]);
+    circle = L.circle([latitude, longitude], { radius: accuracy });
 
-  const featureGroup = L.featureGroup([marker, circle]).addTo(map);
+    const featureGroup = L.featureGroup([marker, circle]).addTo(map);
 
-  // if (setFitBound) {
-  //   map.fitBounds(featureGroup.getBounds());
-  //   setFitBound = false;
-  // }
-  document.querySelector(".error").innerHTML = "";
-  sendNotification(`You are ${isInside ? "" : "not"} in the location`);
+    // if (setFitBound) {
+    //   map.fitBounds(featureGroup.getBounds());
+    //   setFitBound = false;
+    // }
+    document.querySelector('.error').innerHTML = '';
+    sendNotification(`You are ${isInside ? '' : 'not'} in the location`);
 }
 const sendNotification = (notificationMessage) => {
-  // alert(notificationMessage);
-  // Send the notification to the user
-  // https://developer.mozilla.org/en-US/docs/Web/API/notification
-  // Ask for the permission
-  // https://developer.mozilla.org/en-US/docs/Web/API/Notification/requestPermission
-  // Notification.requestPermission();
-  // new Notification(notificationMessage);
-  // https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification
+    // alert(notificationMessage);
+    // Send the notification to the user
+    // https://developer.mozilla.org/en-US/docs/Web/API/notification
+    // Ask for the permission
+    // https://developer.mozilla.org/en-US/docs/Web/API/Notification/requestPermission
+    // Notification.requestPermission();
+    // new Notification(notificationMessage);
+    // https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification
 
-  if (!("Notification" in window)) {
-    // Check if the browser supports notifications
-    alert("This browser does not support desktop notification");
-  } else if (Notification.permission === "granted") {
-    // Check whether notification permissions have already been granted;
-    // if so, create a notification
-    const notification = new Notification("GeoAttend", {
-      body: notificationMessage,
-    });
-    // …
-  } else if (Notification.permission !== "denied") {
-    // We need to ask the user for permission
-    Notification.requestPermission().then((permission) => {
-      console.log(permission);
-      // If the user accepts, let's create a notification
-      if (permission === "granted") {
-        const notification = new Notification("GeoAttend", {
-          body: notificationMessage,
+    if (!('Notification' in window)) {
+        // Check if the browser supports notifications
+        alert('This browser does not support desktop notification');
+    } else if (Notification.permission === 'granted') {
+        // Check whether notification permissions have already been granted;
+        // if so, create a notification
+        const notification = new Notification('GeoAttend', {
+            body: notificationMessage
         });
         // …
-      }
-    });
-  }
+    } else if (Notification.permission !== 'denied') {
+        // We need to ask the user for permission
+        Notification.requestPermission().then((permission) => {
+            console.log(permission);
+            // If the user accepts, let's create a notification
+            if (permission === 'granted') {
+                const notification = new Notification('GeoAttend', {
+                    body: notificationMessage
+                });
+                // …
+            }
+        });
+    }
 };
 
 const errorCallback = (error) => {
-  console.log(error);
-  document.querySelector(".message").innerHTML = "";
-  document.querySelector(".coordinates").innerHTML = "";
-  document.querySelector(".error").innerHTML = error.message;
+    console.log(error);
+    document.querySelector('.message').innerHTML = '';
+    document.querySelector('.coordinates').innerHTML = '';
+    document.querySelector('.error').innerHTML = error.message;
 };
 
 const options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0,
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
 };
 
 if (!navigator.geolocation) {
-  console.log("Your browser doesn't support geolocation feature!");
+    console.log("Your browser doesn't support geolocation feature!");
 } else {
-  navigator.geolocation.watchPosition(successCallback, errorCallback, options);
+    navigator.geolocation.watchPosition(successCallback, errorCallback, options);
 }

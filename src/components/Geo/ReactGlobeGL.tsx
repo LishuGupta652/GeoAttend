@@ -4,7 +4,7 @@ import * as React from "react";
 export const ReactGlobeGL = ({ state }) => {
     return (
         <div className="globe">
-            <Globe
+            {/* <Globe
                 // ref={(el: any) => {
                 //     if (el) {
                 //         el.pointOfView({
@@ -30,7 +30,7 @@ export const ReactGlobeGL = ({ state }) => {
                         label: "Your Location"
                     }
                 ]}
-            />
+            /> */}
             <article>
                 <table>
                     <tbody>

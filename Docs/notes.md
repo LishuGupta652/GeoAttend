@@ -29,7 +29,9 @@
 
 ## geofencing
 
-https://docs.kuzzle.io/core/2/guides/introduction/what-is-kuzzle/ https://dzone.com/articles/geofencing-regions-with-javascript-and-here
+https://docs.kuzzle.io/core/2/guides/introduction/what-is-kuzzle/
+
+https://dzone.com/articles/geofencing-regions-with-javascript-and-here
 
 ## move able typescript
 
