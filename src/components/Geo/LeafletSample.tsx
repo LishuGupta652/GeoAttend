@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { MapContainer, TileLayer, useMap, Marker, Popup, useMapEvents } from 'react-leaflet'
+import { MapContainer, TileLayer, useMap, Marker, Popup, useMapEvents, Circle, LayersControl } from 'react-leaflet'
 import { useGeolocation } from "@uidotdev/usehooks";
 import { useWindowSize } from "@uidotdev/usehooks";
 import styled from 'styled-components'
@@ -49,9 +49,13 @@ const LeafletSample = () => {
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker position={[state?.latitude || 10.7, state?.longitude || 78.81]}>
 
+                <Marker position={[state?.latitude || 10.7, state?.longitude || 78.81]} >
                 </Marker>
+
+
+                <Circle center={[state?.latitude || 10.7, state?.longitude || 78.81]} radius={state.accuracy} />
+
 
                 <LocationMarker />
             </MapContainer>

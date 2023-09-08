@@ -4,6 +4,8 @@ import 'leaflet/dist/leaflet.css';
 
 
 import LeafletSample from '../components/Geo/LeafletSample'
+import ExternalStateExample from '../components/Geo/Leaflet/ExternalState';
+
 const GeoLocationStyled = styled.div`
     display: flex;
     flex-direction: column;
@@ -18,7 +20,8 @@ const Geolocation = () => {
         <GeoLocationStyled>
 
             <div className="leaf_maps">
-                <LeafletSample />
+                {/* <LeafletSample /> */}
+                <ExternalStateExample />
             </div>
             <Geohooks />
         </GeoLocationStyled>

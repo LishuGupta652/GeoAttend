@@ -26,7 +26,7 @@ export const ReactGlobeGL = ({ state }) => {
                     {
                         lat: state.latitude,
                         lng: state.longitude,
-                        alt: state.altitude,
+                        alt: state.altitude,    
                         label: "Your Location"
                     }
                 ]}
