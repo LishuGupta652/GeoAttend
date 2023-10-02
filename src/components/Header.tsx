@@ -33,6 +33,9 @@ const Header = () => {
                         </Button>
 
                         <Button color="inherit">
+                            <Link to="/locate">Locate</Link>
+                        </Button>
+                        <Button color="inherit">
                             <Link to="/geolocation">Geolocation</Link>
                         </Button>
                         {

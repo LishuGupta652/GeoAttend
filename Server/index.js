@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const env = require('dotenv').config();
 const userRoutes = require('./routes/User');
 const postRoutes = require('./routes/posts');
+const locationRoutes = require('./routes/Location');
 const morgan = require('morgan');
 const cors = require('cors');
 
@@ -29,10 +30,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/user', userRoutes);
 app.use('/api/posts', postRoutes);
+app.use('/api/v1/location', locationRoutes);
 // Index Route
 app.get('/', (req, res) => {
     res.send({
         msg: 'Welcome to Geo Attend Server. If you are seeing this. You are at right track.',
-        route: '/api/user/register'
+        route: ['/api/user/register', '/api/v1/location']
     });
 });
