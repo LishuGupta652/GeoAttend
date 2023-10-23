@@ -16,7 +16,8 @@
         "docker:up": "docker-compose up ",
         "docker:start": "docker-compose build && docker-compose up ",
         "docker:build:test": "docker build -t geoattend .",
-        "prod": "vite build && npm run lint && npm run release  && npm run push:tags "
+        "prod": "vite build && npm run lint && npm run release  && npm run push:tags ",
+        "upload": "npx codesandbox ./ "
     },
     "dependencies": {
         "@emotion/react": "^11.11.1",
@@ -48,6 +49,7 @@
         "@typescript-eslint/parser": "^6.0.0",
         "@vitejs/plugin-react-swc": "^3.3.2",
         "autoprefixer": "^10.4.15",
+        "codesandbox": "^2.2.3",
         "eslint": "^8.45.0",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-refresh": "^0.4.3",
