@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useGeolocation } from "@uidotdev/usehooks";
 import { useParams, useNavigate } from 'react-router-dom';
+import { BASE_USER_LOCATION_URL, LOCATION_USER } from '../../utils/constants';
 
 
 const LocateStyled = styled.div`
@@ -42,7 +43,7 @@ const LocateStart = () => {
 
     const sendData = () => {
         const data = { username: name, ...state };
-        fetch("http://localhost:3001/api/v1/location/user", {
+        fetch(`${BASE_USER_LOCATION_URL}/${LOCATION_USER}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

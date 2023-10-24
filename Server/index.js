@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3001;
 const mongoose = require('mongoose');
 require('dotenv').config();
 const userRoutes = require('./routes/User');
@@ -9,8 +8,7 @@ const locationRoutes = require('./routes/Location');
 const morgan = require('morgan');
 const cors = require('cors');
 
-console.log('updates are working ');
-console.log(process.env);
+const PORT = process.env.PORT || 5000;
 
 mongoose
     .connect(process.env.MONGODB_URI)
