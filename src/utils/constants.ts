@@ -1,4 +1,3 @@
-console.log(import.meta.env)
 export const BASE_USER_API_URL = `http://localhost:${import.meta.env.VITE_SERVER_PORT}/api/user/`;
 export const BASE_USER_LOCATION_URL = `http://localhost:${import.meta.env.VITE_SERVER_PORT}/api/v1/location`;
 

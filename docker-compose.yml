@@ -36,24 +36,25 @@ services:
         # tty: true
         # tty is used to keep the container running
 
-    # frontend:
-    #     container_name: geoattend_frontend
-    #     restart: always
-    #     build:
-    #         context: .
-    #         dockerfile: Dockerfile
-    #     depends_on:
-    #         - database
-    #     environment:
-    #         - MONGO_URL=mongodb://database:27017
-    #     ports:
-    #         - "8080:8080"
-    #     # volumes: 
-    #     #   - type: bind
-    #     #     source: ./
-    #     #     target: /app
-    #     tty: true
-    #     # tty is used to keep the container running
+    frontend:
+        container_name: geoattend_frontend
+        restart: always
+        build:
+            context: .
+            dockerfile: Dockerfile
+        depends_on:
+            - database
+        environment:
+            - VITE_PORT=8080
+            - VITE_SERVER_PORT=5000
+        ports:
+            - "8080:8080"
+        # volumes: 
+        #   - type: bind
+        #     source: ./
+        #     target: /app
+        tty: true
+        # tty is used to keep the container running
 
 volumes:
   my_data: 
