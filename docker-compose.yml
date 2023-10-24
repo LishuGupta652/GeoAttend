@@ -1,29 +1,59 @@
 version: '3'
-services:
-    # database:
-    #   image: mongo
-    #   volumes:
-    #     - my_data:/data/db
-    #   ports:
-    #     - "27018:27017"
 
-    frontend:
-        container_name: geoattend_frontend
+
+
+services:
+    database:
+
+        image: mongo
+        volumes:
+            - my_data:/data/db
+        ports:
+            - "27017:27017"
+
+
+    backend:
+        container_name: geoattend_backend
         restart: always
         build:
-            context: .
+            context: ./server
             dockerfile: Dockerfile
-        # depends_on:
-        #     - database
-        # environment:
-        # - MONGO_URL=mongodb://database:27018
+        depends_on:
+            - database
+        environment:
+            - MONGODB_URI=mongodb://database:27017
+            - TOKEN_SECRET=thattypescriptguy
+            - PORT=5000
+        # volumes:
+        #     - ./server:/usr/src/app
+        #     - /server/node_modules
         ports:
-            - "3000:3000"
+            - "5000:5000"
         # volumes: 
         #   - type: bind
         #     source: ./
         #     target: /app
         # tty: true
         # tty is used to keep the container running
-# volumes:
-#   my_data:
+
+    # frontend:
+    #     container_name: geoattend_frontend
+    #     restart: always
+    #     build:
+    #         context: .
+    #         dockerfile: Dockerfile
+    #     depends_on:
+    #         - database
+    #     environment:
+    #         - MONGO_URL=mongodb://database:27017
+    #     ports:
+    #         - "8080:8080"
+    #     # volumes: 
+    #     #   - type: bind
+    #     #     source: ./
+    #     #     target: /app
+    #     tty: true
+    #     # tty is used to keep the container running
+
+volumes:
+  my_data: 

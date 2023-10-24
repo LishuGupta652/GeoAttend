@@ -142,6 +142,11 @@ GeoAttend revolutionizes traditional attendance management, bringing organizatio
 
 For more information and a live demo, visit our [website](https://geoattend.lishugupta.in/) and experience the future of attendance management with GeoAttend.
 
+## References
+
+-   https://geoattend.lishugupta.in/
+-   https://codesandbox.io/p/sandbox/geoattend-wf74h9?welcome=true
+
 ## How is GeoAttend Different?
 
 GeoAttend is a unique attendance management system that leverages geofencing technology to ensure accurate and efficient attendance tracking. Unlike traditional attendance systems, GeoAttend does not
@@ -234,3 +239,11 @@ GeoAttend is a powerful attendance management system that can be further enhance
 
 -   lishugupta652@gmail.com To report a bug, please [open an issue](https://github.com/LishuGupta652/GeoAttend/issues/new) on GitHub and provide detailed information about the bug, including steps to
     reproduce it and any relevant screenshots. We will investigate the issue and respond as soon as possible. ![dino](https://i.imgur.com/6rUiRXy.gif)
+
+# Questions
+
+-   1. How to solve docker-compose up error in GCC environment ?
+
+```bash
+export LD_LIBRARY_PATH=/usr/local/lib
+```
