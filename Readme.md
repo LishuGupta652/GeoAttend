@@ -1,6 +1,6 @@
 ![logo](https://i.imgur.com/lU5LxHe.png)
 
-# GeoAttend: Revolutionizing Attendance with Geofencing
+# Automated Attendance Management Using Wireless Technologies
 
 Introducing **GeoAttend**, a cutting-edge Geospatial Attendance System designed to streamline attendance tracking for organizations and events of all sizes. With a robust set of features and a
 user-friendly interface, GeoAttend ensures accurate and efficient attendance management through advanced geofencing technology.
